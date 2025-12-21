@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique | Ma Marque</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .shop-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('../images/shop-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px 50px;
+            margin-top: 60px;
+        }
+
+        .shop-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .sort-select {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .products-count {
+            color: #666;
+        }
+
+        .sidebar {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .filters-sidebar {
+            width: 250px;
+            flex-shrink: 0;
+        }
+
+        .filter-group {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .filter-group h4 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .filter-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .price-range {
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .price-values {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .filters-sidebar {
+                display: none;
+            }
+            
+            .mobile-filters-toggle {
+                display: block;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">MA MARQUE</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="boutique.html" class="active">Boutique</a></li>
+                <li><a href="nouveautes.html">Nouveautés</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="panier.html" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="shop-header">
+        <h1>NOTRE BOUTIQUE</h1>
+        <p>Tous nos produits réunis en un seul endroit</p>
+    </div>
+
+    <main class="section">
+        <div class="container">
+            <div class="shop-controls">
+                <div class="filters-toggle">
+                    <button class="btn btn-outline mobile-filters-toggle">
+                        <i class="fas fa-filter"></i> Filtres
+                    </button>
+                </div>
+                
+                <div class="products-count">
+                    <span id="product-count">12</span> produits
+                </div>
+                
+                <div class="sort-by">
+                    <select class="sort-select" id="sort-select">
+                        <option value="popular">Popularité</option>
+                        <option value="new">Nouveautés</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                        <option value="name">Ordre alphabétique</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="filters-sidebar" id="filters-sidebar">
+                    <div class="filter-group">
+                        <h4>Catégories</h4>
+                        <div class="filter-options">
+                            <label>
+                                <input type="checkbox" name="category" value="homme">
+                                Homme
+                            </label>
+                            <label>
+                                <input type="checkbox" name="category" value="femme">
+                                Femme
+                            </label>
+                            <label>
+                                <input type="checkbox" name="category" value="accessoires">
+                                Accessoires
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Prix</h4>
+                        <input type="range" min="0" max="200" value="200" class="price-range" id="price-range">
+                        <div class="price-values">
+                            <span>0€</span>
+                            <span id="max-price">200€</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Couleurs</h4>
+                        <div class="color-filters">
+                            <div class="color-option" style="background: #000;" data-color="noir"></div>
+                            <div class="color-option" style="background: #fff; border: 1px solid #ddd;" data-color="blanc"></div>
+                            <div class="color-option" style="background: #808080;" data-color="gris"></div>
+                            <div class="color-option" style="background: #0000ff;" data-color="bleu"></div>
+                            <div class="color-option" style="background: #964B00;" data-color="marron"></div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Tailles</h4>
+                        <div class="size-filters">
+                            <button class="size-btn" data-size="xs">XS</button>
+                            <button class="size-btn" data-size="s">S</button>
+                            <button class="size-btn" data-size="m">M</button>
+                            <button class="size-btn" data-size="l">L</button>
+                            <button class="size-btn" data-size="xl">XL</button>
+                        </div>
+                    </div>
+
+                    <button class="btn" onclick="applyFilters()">Appliquer les filtres</button>
+                    <button class="btn btn-outline" onclick="resetFilters()">Réinitialiser</button>
+                </div>
+
+                <div class="products-container" style="flex-grow: 1;">
+                    <div class="products-grid" id="products-grid">
+                        <!-- Produits chargés dynamiquement -->
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="pagination-btn" disabled>Précédent</button>
+                        <span class="page-numbers">
+                            <span class="page-active">1</span>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                        </span>
+                        <button class="pagination-btn">Suivant</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer identique à index.html -->
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // Données des produits
+        const boutiqueProducts = [
+            {
+                id: 1,
+                name: "T-Shirt Essential Noir",
+                price: 39.99,
+                image: "../images/produits/t-shirt1.jpg",
+                category: "homme",
+                color: "noir",
+                sizes: ["s", "m", "l", "xl"],
+                popular: true
+            },
+            {
+                id: 2,
+                name: "Jean Slim Bleu",
+                price: 89.99,
+                image: "../images/produits/jean1.jpg",
+                category: "homme",
+                color: "bleu",
+                sizes: ["30", "32", "34", "36"],
+                popular: true
+            },
+            // Ajoutez plus de produits ici
+        ];
+
+        // Afficher les produits
+        function displayProducts(products) {
+            const container = document.getElementById('products-grid');
+            container.innerHTML = products.map(product => `
+                <div class="product-card" data-category="${product.category}" data-color="${product.color}">
+                    <div class="product-badge">${product.popular ? 'POPULAIRE' : 'NOUVEAU'}</div>
+                    <img src="${product.image}" alt="${product.name}" class="product-img">
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p class="price">${product.price.toFixed(2)}€</p>
+                        <div class="product-actions">
+                            <button class="btn-add-to-cart" onclick="addToCart(${product.id}, '${product.name}', ${product.price}, '${product.image}')">
+                                <i class="fas fa-shopping-bag"></i> Ajouter
+                            </button>
+                            <button class="btn-wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('product-count').textContent = products.length;
+        }
+
+        // Initialiser
+        document.addEventListener('DOMContentLoaded', () => {
+            displayProducts(boutiqueProducts);
+            
+            // Toggle filters mobile
+            document.querySelector('.mobile-filters-toggle').addEventListener('click', () => {
+                document.getElementById('filters-sidebar').style.display = 
+                    document.getElementById('filters-sidebar').style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Fonctions de filtrage
+        function applyFilters() {
+            const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked'))
+                .map(cb => cb.value);
+            
+            const maxPrice = document.getElementById('price-range').value;
+            
+            // Filtrer les produits
+            let filtered = boutiqueProducts;
+            
+            if (selectedCategories.length > 0) {
+                filtered = filtered.filter(p => selectedCategories.includes(p.category));
+            }
+            
+            filtered = filtered.filter(p => p.price <= maxPrice);
+            
+            displayProducts(filtered);
+        }
+
+        function resetFilters() {
+            document.querySelectorAll('input[name="category"]').forEach(cb => cb.checked = false);
+            document.getElementById('price-range').value = 200;
+            document.getElementById('max-price').textContent = '200€';
+            displayProducts(boutiqueProducts);
+        }
+    </script>
+</body>
+</html>

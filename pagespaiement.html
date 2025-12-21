@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Sécurisé | Ma Marque</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .payment-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('../images/payment-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px 50px;
+            margin-top: 60px;
+        }
+
+        .payment-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 20px;
+        }
+
+        .checkout-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .checkout-steps:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #ddd;
+            z-index: 1;
+        }
+
+        .step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 25%;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            background: #ddd;
+            color: #666;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+        }
+
+        .step.active .step-circle {
+            background: #000;
+            color: white;
+        }
+
+        .checkout-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 3rem;
+        }
+
+        .payment-methods {
+            margin-top: 2rem;
+        }
+
+        .method-card {
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .method-card:hover {
+            border-color: #ccc;
+        }
+
+        .method-card.selected {
+            border-color: #000;
+            background: #f8f9fa;
+        }
+
+        .method-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .method-icons {
+            display: flex;
+            gap: 10px;
+            font-size: 1.5rem;
+        }
+
+        .payment-form {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .summary {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .summary-total {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .badge {
+            text-align: center;
+        }
+
+        .badge i {
+            font-size: 2rem;
+            color: #28a745;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-info {
+            background: #e9f7fe;
+            border-left: 4px solid #17a2b8;
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .secure-notice {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #28a745;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .checkout-steps {
+                flex-wrap: wrap;
+            }
+            
+            .step {
+                width: 50%;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">MA MARQUE</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="boutique.html">Boutique</a></li>
+                <li><a href="nouveautes.html">Nouveautés</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="panier.html" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="payment-header">
+        <h1>PAIEMENT SÉCURISÉ</h1>
+        <p>Finalisez votre commande en toute sécurité</p>
+    </div>
+
+    <main class="payment-container">
+        <!-- Étapes de commande -->
+        <div class="checkout-steps">
+            <div class="step">
+                <div class="step-circle">1</div>
+                <span>Panier</span>
+            </div>
+            <div class="step">
+                <div class="step-circle">2</div>
+                <span>Livraison</span>
+            </div>
+            <div class="step active">
+                <div class="step-circle">3</div>
+                <span>Paiement</span>
+            </div>
+            <div class="step">
+                <div class="step-circle">4</div>
+                <span>Confirmation</span>
+            </div>
+        </div>
+
+        <div class="payment-info">
+            <p><i class="fas fa-shield-alt"></i> <strong>Paiement 100% sécurisé</strong> - Vos données bancaires sont cryptées et ne sont jamais stockées sur nos serveurs.</p>
+        </div>
+
+        <div class="checkout-content">
+            <!-- Méthodes de paiement -->
+            <div class="payment-options">
+                <h2>Choisissez votre moyen de paiement</h2>
+                
+                <!-- Carte bancaire -->
+                <div class="method-card selected" id="card-method">
+                    <div class="method-header">
+                        <div>
+                            <h3>Carte bancaire</h3>
+                            <p>Paiement sécurisé par carte</p>
+                        </div>
+                        <div class="method-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-form" id="card-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Numéro de carte *</label>
+                                <input type="text" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19">
+                            </div>
+                            <div class="form-group">
+                                <label>Date d'expiration *</label>
+                                <input type="text" class="form-control" placeholder="MM/AA">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Code de sécurité *</label>
+                                <input type="text" class="form-control" placeholder="CVC" maxlength="3">
+                            </div>
+                            <div class="form-group">
+                                <label>Nom sur la carte *</label>
+                                <input type="text" class="form-control" placeholder="Votre nom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PayPal -->
+                <div class="method-card" id="paypal-method">
+                    <div class="method-header">
+                        <div>
+                            <h3>PayPal</h3>
+                            <p>Payer avec votre compte PayPal</p>
+                        </div>
+                        <div class="method-icons">
+                            <i class="fab fa-paypal"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Virement bancaire -->
+                <div class="method-card" id="transfer-method">
+                    <div class="method-header">
+                        <div>
+                            <h3>Virement bancaire</h3>
+                            <p>RIB fourni après commande</p>
+                        </div>
+                        <div class="method-icons">
+                            <i class="fas fa-university"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apple Pay / Google Pay -->
+                <div class="method-card" id="mobile-method">
+                    <div class="method-header">
+                        <div>
+                            <h3>Paiement mobile</h3>
+                            <p>Apple Pay / Google Pay</p>
+                        </div>
+                        <div class="method-icons">
+                            <i class="fab fa-apple-pay"></i>
+                            <i class="fab fa-google-pay"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conditions générales -->
+                <div class="terms">
+                    <label style="display: flex; align-items: flex-start; gap: 10px; margin-top: 2rem;">
+                        <input type="checkbox" id="terms" style="margin-top: 3px;">
+                        <span>J'accepte les <a href="#" style="color: #000;">conditions générales de vente</a> et confirme avoir pris connaissance de la <a href="#" style="color: #000;">politique de confidentialité</a>.</span>
+                    </label>
+                </div>
+
+                <!-- Bouton de paiement -->
+                <button class="btn btn-large" style="width: 100%; margin-top: 2rem;" onclick="processPayment()">
+                    <i class="fas fa-lock"></i> Payer maintenant 189.97€
+                </button>
+
+                <div class="secure-notice">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Transaction sécurisée par SSL 256-bit</span>
+                </div>
+            </div>
+
+            <!-- Récapitulatif -->
+            <div class="summary">
+                <h3>Récapitulatif de commande</h3>
+                
+                <div class="summary-item">
+                    <span>Sous-total</span>
+                    <span>179.97€</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span>Livraison</span>
+                    <span>10.00€</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span>Promotion</span>
+                    <span>-10.00€</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span>TVA (20%)</span>
+                    <span>30.00€</span>
+                </div>
+                
+                <div class="summary-total">
+                    <span>Total TTC</span>
+                    <span>189.97€</span>
+                </div>
+
+                <!-- Détails articles -->
+                <div style="margin-top: 2rem;">
+                    <h4>Articles (3)</h4>
+                    <div style="margin-top: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                            <img src="../images/produits/t-shirt1.jpg" alt="T-Shirt" style="width: 50px; height: 50px; object-fit: cover;">
+                            <div>
+                                <p style="margin: 0; font-size: 0.9rem;">T-Shirt Essential Noir</p>
+                                <p style="margin: 0; color: #666;">Taille: M × 1</p>
+                            </div>
+                            <span style="margin-left: auto;">39.99€</span>
+                        </div>
+                        <!-- Ajouter plus d'articles -->
+                    </div>
+                </div>
+
+                <!-- Code promo -->
+                <div style="margin-top: 2rem;">
+                    <div class="form-group">
+                        <label>Code promo</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" class="form-control" placeholder="Entrez votre code">
+                            <button class="btn btn-outline">Appliquer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Badges de sécurité -->
+        <div class="security-badges">
+            <div class="badge">
+                <i class="fas fa-shield-alt"></i>
+                <p>Paiement<br>sécurisé</p>
+            </div>
+            <div class="badge">
+                <i class="fas fa-lock"></i>
+                <p>SSL 256-bit<br>cryptage</p>
+            </div>
+            <div class="badge">
+                <i class="fas fa-credit-card"></i>
+                <p>CB/Visa<br>Mastercard</p>
+            </div>
+            <div class="badge">
+                <i class="fas fa-user-shield"></i>
+                <p>Protection<br>des données</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer identique à index.html -->
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // Sélection méthode de paiement
+        document.querySelectorAll('.method-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Retirer la sélection de toutes les cartes
+                document.querySelectorAll('.method-card').forEach(c => {
+                    c.classList.remove('selected');
+                    const form = c.querySelector('.payment-form');
+                    if (form) form.style.display = 'none';
+                });
+                
+                // Sélectionner la carte cliquée
+                this.classList.add('selected');
+                const form = this.querySelector('.payment-form');
+                if (form) form.style.display = 'block';
+            });
+        });
+
+        // Formatage numéro de carte
+        const cardNumberInput = document.querySelector('input[placeholder="1234 5678 9012 3456"]');
+        if (cardNumberInput) {
+            cardNumberInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+                let formatted = value.match(/.{1,4}/g);
+                if (formatted) {
+                    e.target.value = formatted.join(' ');
+                }
+            });
+        }
+
+        // Processus de paiement
+        function processPayment() {
+            if (!document.getElementById('terms').checked) {
+                alert('Veuillez accepter les conditions générales de vente.');
+                return;
+            }
+
+            const selectedMethod = document.querySelector('.method-card.selected h3').textContent;
+            
+            // Simulation de traitement
+            document.body.style.opacity = '0.7';
+            document.body.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                alert(`Paiement par ${selectedMethod} effectué avec succès !\n\nVous allez être redirigé vers la page de confirmation.`);
+                window.location.href = 'confirmation.html';
+            }, 2000);
+        }
+
+        // Protection contre la fraude
+        window.addEventListener('beforeunload', function(e) {
+            if (document.getElementById('terms').checked) {
+                // Empêcher de quitter la page pendant le paiement
+                e.preventDefault();
+                e.returnValue = 'Votre paiement est en cours. Êtes-vous sûr de vouloir quitter ?';
+            }
+        });
+    </script>
+</body>
+</html>
