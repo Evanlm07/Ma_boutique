@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier | Ovoid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">OVOID</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="pagesboutique.html">Boutique</a></li>
+                <li><a href="pagesnouveautes.html">Nouveautés</a></li>
+                <li><a href="pagescollections.html">Collections</a></li>
+                <li><a href="pagesapropos.html">À propos</a></li>
+                <li><a href="pagescontact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="pagespanier.html" class="cart-icon active">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h1 class="section-title">VOTRE PANIER</h1>
+            
+            <div id="cart-items" style="margin-top: 40px;">
+                <!-- Articles chargés par JavaScript -->
+                <p style="text-align: center; color: #666;">Votre panier est vide</p>
+            </div>
+
+            <div id="cart-summary" style="display: none; margin-top: 40px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #f8f9fa;">
+                    <div>
+                        <h3>Total: <span id="cart-total">0.00</span>€</h3>
+                    </div>
+                    <div>
+                        <a href="pagescontact.html" class="btn">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="pagesboutique.html" class="btn">Continuer mes achats</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Même footer que index.html -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OVOID</h4>
+                <p>Marque française de vêtements premium</p>
+            </div>
+            <div class="footer-section">
+                <h4>LIENS</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="pagesboutique.html">Boutique</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACT</h4>
+                <p>contact@ovoid.fr</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ovoid</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Fonction pour afficher le panier
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const container = document.getElementById('cart-items');
+            const summary = document.getElementById('cart-summary');
+            const totalElement = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666;">Votre panier est vide</p>';
+                summary.style.display = 'none';
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                return `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}" style="width: 100px; height: 100px; object-fit: cover;">
+                        <div>
+                            <h3>${item.name}</h3>
+                            <p>${item.price}€ × ${item.quantity}</p>
+                        </div>
+                        <div>
+                            <button onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                            <span style="margin: 0 10px;">${item.quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                        </div>
+                        <div>
+                            <strong>${itemTotal.toFixed(2)}€</strong>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            totalElement.textContent = total.toFixed(2);
+            summary.style.display = 'block';
+            updateCartCount();
+        }
+
+        function updateQuantity(productId, newQuantity) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const itemIndex = cart.findIndex(item => item.id === productId);
+            
+            if (itemIndex !== -1) {
+                if (newQuantity <= 0) {
+                    cart.splice(itemIndex, 1);
+                } else {
+                    cart[itemIndex].quantity = newQuantity;
+                }
+                
+                localStorage.setItem('cart', JSON.stringify(cart));
+                displayCart();
+            }
+        }
+
+        // Afficher le panier au chargement
+        document.addEventListener('DOMContentLoaded', displayCart);
+    </script>
+</body>
+</html>
