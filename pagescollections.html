@@ -3,106 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collections | Ma Marque</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Collections | Ovoid</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .collections-hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('../images/collections-banner.jpg');
+        .collection-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/collection-bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 100px 20px 50px;
-            margin-top: 60px;
+            padding: 100px 20px;
+            margin-top: 80px;
         }
-
-        .collection-category {
-            margin: 4rem 0;
-        }
-
-        .category-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .view-all {
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .collection-banner {
-            position: relative;
-            height: 400px;
-            margin-bottom: 3rem;
-            overflow: hidden;
-        }
-
-        .collection-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .banner-content {
-            position: absolute;
-            bottom: 2rem;
-            left: 2rem;
-            color: white;
-            max-width: 500px;
-        }
-
-        .season-collections {
+        
+        .collection-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 30px;
+            margin: 40px 0;
         }
-
-        .season-card {
+        
+        .collection-card {
             position: relative;
-            height: 400px;
             overflow: hidden;
+            border-radius: 10px;
+            height: 400px;
         }
-
-        .season-card img {
+        
+        .collection-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
-
-        .season-card:hover img {
+        
+        .collection-card:hover img {
             transform: scale(1.05);
         }
-
-        .season-info {
+        
+        .collection-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             background: rgba(0,0,0,0.7);
             color: white;
-            padding: 1.5rem;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
         }
-
+        
+        .collection-card:hover .collection-overlay {
+            transform: translateY(0);
+        }
+        
         .collection-stats {
             display: flex;
             justify-content: space-around;
             text-align: center;
-            padding: 2rem;
+            padding: 40px;
             background: #f8f9fa;
-            margin: 3rem 0;
+            margin: 40px 0;
             border-radius: 10px;
         }
-
+        
         .stat-item h3 {
             color: #000;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+            font-size: 32px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -110,115 +79,126 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="../index.html">MA MARQUE</a>
+                <a href="index.html">OVOID</a>
             </div>
             <ul class="nav-links">
-                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="index.html">Accueil</a></li>
                 <li><a href="pagesboutique.html">Boutique</a></li>
                 <li><a href="pagesnouveautes.html">Nouveautés</a></li>
                 <li><a href="pagescollections.html" class="active">Collections</a></li>
+                <li><a href="pagesapropos.html">À propos</a></li>
                 <li><a href="pagescontact.html">Contact</a></li>
             </ul>
             <div class="nav-icons">
-                <a href="panier.html" class="cart-icon">
+                <a href="pagespanier.html" class="cart-icon">
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-count">0</span>
                 </a>
-                <button class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
         </nav>
     </header>
 
-    <div class="pagescollections-hero">
-        <h1>NOS COLLECTIONS</h1>
-        <p>Explorez nos univers stylés selon vos envies</p>
-    </div>
+    <!-- Bannière collections -->
+    <section class="collection-hero">
+        <div class="container">
+            <h1 style="font-size: 48px; margin-bottom: 20px;">NOS COLLECTIONS</h1>
+            <p style="font-size: 20px; max-width: 600px; margin: 0 auto;">
+                Explorez nos univers dédiés, chacun avec son identité unique
+            </p>
+        </div>
+    </section>
 
     <main class="section">
         <div class="container">
             <!-- Collection Homme -->
-            <div class="collection-category">
-                <div class="category-header">
-                    <h2>COLLECTION HOMME</h2>
-                    <a href="boutique.html?cat=homme" class="view-all">Tout voir →</a>
-                </div>
+            <div style="margin-bottom: 60px;">
+                <h2 style="text-align: center; margin-bottom: 30px; font-size: 32px;">COLLECTION HOMME</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Des pièces essentielles pour l'homme moderne. Élégance décontractée et style urbain.
+                </p>
                 
-                <div class="collection-banner">
-                    <img src="../images/collection-homme-banner.jpg" alt="Collection Homme">
-                    <div class="banner-content">
-                        <h3>STYLE URBAIN CONTEMPORAIN</h3>
-                        <p>Des pièces essentielles pour l'homme moderne</p>
-                        <a href="pagesboutique.html?cat=homme" class="btn">Découvrir</a>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/homme1.jpg" alt="T-Shirt Homme" class="product-img">
+                        <h3>T-Shirts Essentials</h3>
+                        <p style="color: #666;">Basiques intemporels en coton premium</p>
+                        <a href="pagesboutique.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Voir la collection</a>
                     </div>
-                </div>
-
-                <div class="products-grid" id="homme-collection">
-                    <!-- Produits homme -->
+                    
+                    <div class="product-card">
+                        <img src="images/homme2.jpg" alt="Sweat Homme" class="product-img">
+                        <h3>Sweats & Hoodies</h3>
+                        <p style="color: #666;">Confort et style pour tous les jours</p>
+                        <a href="pagesboutique.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Voir la collection</a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="images/homme3.jpg" alt="Veste Homme" class="product-img">
+                        <h3>Vestes & Manteaux</h3>
+                        <p style="color: #666;">Protection et élégance pour toutes les saisons</p>
+                        <a href="pagesboutique.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Voir la collection</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Collection Femme -->
-            <div class="collection-category">
-                <div class="category-header">
-                    <h2>COLLECTION FEMME</h2>
-                    <a href="pagesboutique.html?cat=femme" class="view-all">Tout voir →</a>
-                </div>
+            <div style="margin-bottom: 60px;">
+                <h2 style="text-align: center; margin-bottom: 30px; font-size: 32px;">COLLECTION FEMME</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Des créations féminines qui célèbrent l'élégance et la singularité.
+                </p>
                 
-                <div class="collection-banner">
-                    <img src="../images/collection-femme-banner.jpg" alt="Collection Femme">
-                    <div class="banner-content">
-                        <h3>ÉLÉGANCE FÉMININE</h3>
-                        <p>Des créations qui célèbrent la femme</p>
-                        <a href="pagesboutique.html?cat=femme" class="btn">Découvrir</a>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/femme1.jpg" alt="Robe Femme" class="product-img">
+                        <h3>Robes & Jupes</h3>
+                        <p style="color: #666;">Fluidité et élégance pour chaque occasion</p>
+                        <a href="pagesboutique.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Voir la collection</a>
                     </div>
-                </div>
-
-                <div class="products-grid" id="femme-collection">
-                    <!-- Produits femme -->
+                    
+                    <div class="product-card">
+                        <img src="images/femme2.jpg" alt="Pull Femme" class="product-img">
+                        <h3>Tops & Pulls</h3>
+                        <p style="color: #666;">Matériaux doux et coupes raffinées</p>
+                        <a href="pagesboutique.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Voir la collection</a>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="images/femme3.jpg" alt="Ensemble Femme" class="product-img">
+                        <h3>Ensembles</h3>
+                        <p style="color: #666;">Looks coordonnés pour un style parfait</p>
+                        <a href="pagesboutique.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Voir la collection</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Accessoires -->
-            <div class="collection-category">
-                <div class="category-header">
-                    <h2>ACCESSOIRES</h2>
-                    <a href="pagesboutique.html?cat=accessoires" class="view-all">Tout voir →</a>
-                </div>
-
-                <div class="products-grid" id="accessoires-collection">
-                    <!-- Accessoires -->
-                </div>
-            </div>
-
-            <!-- Collections saisonnières -->
-            <div class="collection-category">
-                <h2>COLLECTIONS SAISONNIÈRES</h2>
+            <!-- Collection Accessoires -->
+            <div>
+                <h2 style="text-align: center; margin-bottom: 30px; font-size: 32px;">ACCESSOIRES</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    La touche finale pour compléter votre look.
+                </p>
                 
-                <div class="season-collections">
-                    <div class="season-card">
-                        <img src="../images/collection-printemps.jpg" alt="Printemps">
-                        <div class="season-info">
-                            <h3>PRINTEMPS 2024</h3>
-                            <p>Des couleurs et matières légères</p>
-                        </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/accessoire1.jpg" alt="Casquette" class="product-img">
+                        <h3>Casquettes & Chapeaux</h3>
+                        <p style="color: #666;">Style et protection solaire</p>
+                        <a href="pagesboutique.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Voir la collection</a>
                     </div>
                     
-                    <div class="season-card">
-                        <img src="../images/collection-ete.jpg" alt="Été">
-                        <div class="season-info">
-                            <h3>ÉTÉ 2024</h3>
-                            <p>Style décontracté et frais</p>
-                        </div>
+                    <div class="product-card">
+                        <img src="images/accessoire2.jpg" alt="Sac" class="product-img">
+                        <h3>Sacs & Pochettes</h3>
+                        <p style="color: #666;">Pratiques et élégants</p>
+                        <a href="pagesboutique.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Voir la collection</a>
                     </div>
                     
-                    <div class="season-card">
-                        <img src="../images/collection-automne.jpg" alt="Automne">
-                        <div class="season-info">
-                            <h3>AUTOMNE 2024</h3>
-                            <p>Matières chaudes et couleurs profondes</p>
-                        </div>
+                    <div class="product-card">
+                        <img src="images/accessoire3.jpg" alt="Ceinture" class="product-img">
+                        <h3>Ceintures & Bijoux</h3>
+                        <p style="color: #666;">Détails qui font la différence</p>
+                        <a href="pagesboutique.html" class="btn" style="display: block; text-align: center; margin-top: 15px;">Voir la collection</a>
                     </div>
                 </div>
             </div>
@@ -234,52 +214,44 @@
                     <p>Collections</p>
                 </div>
                 <div class="stat-item">
-                    <h3>12</h3>
-                    <p>Nouveautés/mois</p>
-                </div>
-                <div class="stat-item">
                     <h3>100%</h3>
                     <p>Qualité française</p>
+                </div>
+                <div class="stat-item">
+                    <h3>12</h3>
+                    <p>Nouveautés/mois</p>
                 </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <!-- Footer identique à index.html -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OVOID</h4>
+                <p>Marque française de vêtements premium</p>
+            </div>
+            <div class="footer-section">
+                <h4>LIENS RAPIDES</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="pagesboutique.html">Boutique</a></li>
+                    <li><a href="pagescollections.html">Collections</a></li>
+                    <li><a href="pagesapropos.html">À propos</a></li>
+                    <li><a href="pagescontact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACT</h4>
+                <p>contact@ovoid.fr</p>
+                <p>123 Avenue de la Mode<br>75001 Paris</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ovoid. Tous droits réservés.</p>
+        </div>
     </footer>
 
-    <script src="../script.js"></script>
-    <script>
-        // Charger les produits par catégorie
-        document.addEventListener('DOMContentLoaded', () => {
-            const hommeProducts = boutiqueProducts.filter(p => p.category === 'homme');
-            const femmeProducts = boutiqueProducts.filter(p => p.category === 'femme');
-            const accessoiresProducts = boutiqueProducts.filter(p => p.category === 'accessoires');
-
-            // Afficher les produits par catégorie
-            displayCollection('homme-collection', hommeProducts.slice(0, 4));
-            displayCollection('femme-collection', femmeProducts.slice(0, 4));
-            displayCollection('accessoires-collection', accessoiresProducts.slice(0, 4));
-        });
-
-        function displayCollection(containerId, products) {
-            const container = document.getElementById(containerId);
-            if (!container || !products.length) return;
-            
-            container.innerHTML = products.map(product => `
-                <div class="product-card">
-                    <img src="${product.image}" alt="${product.name}" class="product-img">
-                    <div class="product-info">
-                        <h3>${product.name}</h3>
-                        <p class="price">${product.price.toFixed(2)}€</p>
-                        <button class="add-to-cart" onclick="addToCart(${product.id}, '${product.name}', ${product.price}, '${product.image}')">
-                            Ajouter au panier
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
