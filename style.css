@@ -343,4 +343,28 @@ textarea.form-control {
     .section {
         padding: 40px 20px;
     }
+    /* Logo image */
+    .logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+    transform: scale(1.05);
+    }
+
+/* Pour aligner le logo avec le menu */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    }
+
+    .logo a {
+    display: flex;
+    align-items: center;
+    }
 }
