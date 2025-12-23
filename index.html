@@ -31,12 +31,46 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+     <!-- Hero Section -->
+    <section class="hero" style="
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                    url('images/hero-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        padding: 150px 20px;
+        text-align: center;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    ">
         <div class="container">
-            <h1>COLLECTION OVOID 2026</h1>
-            <p>Des vêtements qui célèbrent votre style unique. Élégance moderne et confort absolu.</p>
-            <a href="pagesboutique.html" class="btn btn-large">Découvrir la collection</a>
+            <h1 style="font-size: 48px; margin-bottom: 20px; font-weight: bold; letter-spacing: 2px;">
+                COLLECTION OVOID 2026
+            </h1>
+            <p style="font-size: 22px; margin-bottom: 40px; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Des vêtements qui célèbrent votre style unique.<br>
+                Élégance moderne et confort absolu.
+            </p>
+            <hr style="width: 100px; height: 2px; background: white; border: none; margin: 40px auto;">
+            <a href="pagesboutique.html" class="btn btn-large" style="
+                background: white; 
+                color: #000; 
+                border: none; 
+                padding: 18px 50px;
+                font-weight: bold;
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 4px;
+                font-size: 18px;
+                margin-top: 20px;
+                transition: all 0.3s ease;
+            " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.3)';" 
+               onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+                Découvrir la collection
+            </a>
         </div>
     </section>
 
