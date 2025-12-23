@@ -345,7 +345,7 @@ textarea.form-control {
     }
     /* Logo image */
     .logo img {
-    height: 70px;
+    height: 140px;
     width: auto;
     display: block;
     transition: transform 0.3s ease;
