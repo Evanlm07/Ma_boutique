@@ -3,11 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - OVOID</title>
+    <title>Support Client - OVOID</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 50px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: #aaa;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        
+        .back-link:hover {
+            color: white;
+        }
+        
+        h1 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        h2 {
+            font-size: 28px;
+            margin: 40px 0 20px;
+            color: white;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .contact-card {
+            background-color: #111;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid white;
+        }
+        
+        .contact-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .contact-card i {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        .hours {
+            background-color: #111;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .hours-table {
+            margin-top: 20px;
+        }
+        
+        .hours-table div {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .emergency {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+            border-left: 4px solid #ff4444;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: black;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background: #ddd;
+        }
+        
+        footer {
+            background-color: #111;
+            padding: 60px 20px 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-section h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section ul li a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #fff;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Support OVOID</h1>
-    <p>Page d'assistance client. Contactez-nous pour toute question.</p>
-    <a href="index.html">Retour à l'accueil</a>
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo">OVOID</a>
+            <a href="index.html" class="back-link">← Retour à l'accueil</a>
+        </header>
+        
+        <main>
+            <h1>Support Client OVOID</h1>
+            <p>Notre équipe de support est là pour vous aider. Choisissez la méthode de contact qui vous convient le mieux.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>Pour les questions générales et le support</p>
+                    <div class="contact-info">
+                        <p><strong>Email :</strong> support@ovoid.fr</p>
+                        <p><strong>Réponse :</strong> Sous 24-48 heures</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Téléphone</h3>
+                    <p>Pour une assistance immédiate</p>
+                    <div class="contact-info">
+                        <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+                        <p><strong>Coût :</strong> Numéro non surtaxé</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-comment-alt"></i>
+                    <h3>Chat en direct</h3>
+                    <p>Pour une assistance en temps réel</p>
+                    <div class="contact-info">
+                        <p><strong>Disponibilité :</strong> Lun-Ven, 9h-18h</p>
+                        <a href="#chat" class="btn">Ouvrir le chat</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hours">
+                <h2>Horaires d'ouverture</h2>
+                <div class="hours-table">
+                    <div>
+                        <span>Lundi - Vendredi</span>
+                        <span>9h00 - 18h00</span>
+                    </div>
+                    <div>
+                        <span>Samedi</span>
+                        <span>10h00 - 16h00</span>
+                    </div>
+                    <div>
+                        <span>Dimanche</span>
+                        <span>Fermé</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="emergency">
+                <h2>⚠️ Assistance urgente</h2>
+                <p>Pour les problèmes urgents concernant votre commande (non livrée, produit défectueux), contactez-nous immédiatement :</p>
+                <p><strong>Email urgent :</strong> urgent@ovoid.fr</p>
+                <p><strong>Téléphone urgent :</strong> +33 1 23 45 67 90</p>
+                <p>Réponse garantie sous 12 heures.</p>
+            </div>
+            
+            <h2>Retours et Échanges</h2>
+            <p>Pour toute demande de retour ou d'échange, veuillez consulter notre page <a href="cov.html" style="color: white;">Conditions de Vente</a> ou contacter notre service client.</p>
+        </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>NAVIGATION</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="pagesboutique.html">Boutique</a></li>
+                    <li><a href="pagesnouveautes.html">Nouveautés</a></li>
+                    <li><a href="pagescollections.html">Collections</a></li>
+                    <li><a href="pagesapropos.html">À propos</a></li>
+                    <li><a href="pagescontact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>CATÉGORIES</h4>
+                <ul>
+                    <li><a href="#">DENIM & PANTALONS</a></li>
+                    <li><a href="#">VESTES</a></li>
+                    <li><a href="#">T-SHIRTS</a></li>
+                    <li><a href="#">ZIPS & SWEATS À CAPUCHE</a></li>
+                    <li><a href="#">KNITS & CREWNECKS</a></li>
+                    <li><a href="#">ACCESSOIRES</a></li>
+                    <li><a href="#">JORTS & SHORTS</a></li>
+                    <li><a href="#">HAUTS & CHEMISES</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><a href="support.html">SUPPORT</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="cov.html">COV</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>INFORMATIONS LÉGALES</h4>
+                <ul>
+                    <li><a href="#">MARQUE JURIDIQUE</a></li>
+                    <li><a href="#">CGU</a></li>
+                    <li><a href="#">MENTIONS LÉGALES</a></li>
+                    <li><a href="#">POLITIQUE DE CONFIDENTIALITÉ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>NEWSLETTER</h4>
+                <p>Inscrivez-vous pour recevoir nos<br>nouveautés et offres exclusives.</p>
+                <form>
+                    <input type="email" placeholder="Votre email">
+                    <button type="submit" class="btn">S'inscrire</button>
+                </form>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 OVOID. Tous droits réservés.</p>
+        </div>
+    </footer>
 </body>
 </html>
