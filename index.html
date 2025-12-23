@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Marque | Vêtements Premium</title>
+    <title>Ovoid | Marque de vêtements premium</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Navigation -->
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="index.html">Ovoid</a>
+                <a href="index.html">OVOID</a>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="pagesboutique.html">Boutique</a></li>
                 <li><a href="pagesnouveautes.html">Nouveautés</a></li>
                 <li><a href="pagescollections.html">Collections</a></li>
+                <li><a href="pagesapropos.html">À propos</a></li>
                 <li><a href="pagescontact.html">Contact</a></li>
             </ul>
             <div class="nav-icons">
@@ -26,159 +27,80 @@
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-count">0</span>
                 </a>
-                <button class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>ÉLÉGANCE MODERNE</h1>
-            <p>Des vêtements qui célèbrent votre style unique</p>
+        <div class="container">
+            <h1>COLLECTION OVOID 2024</h1>
+            <p>Des vêtements qui célèbrent votre style unique. Élégance moderne et confort absolu.</p>
             <a href="pagesboutique.html" class="btn btn-large">Découvrir la collection</a>
         </div>
     </section>
 
-    <!-- Section Avantages -->
+    <!-- Avantages -->
     <section class="avantages">
-        <div class="container">
-            <div class="avantages-grid">
-                <div class="avantage-item">
-                    <i class="fas fa-shipping-fast"></i>
-                    <h3>Livraison Gratuite</h3>
-                    <p>À partir de 100€ d'achat</p>
-                </div>
-                <div class="avantage-item">
-                    <i class="fas fa-exchange-alt"></i>
-                    <h3>Retours Faciles</h3>
-                    <p>30 jours pour changer d'avis</p>
-                </div>
-                <div class="avantage-item">
-                    <i class="fas fa-lock"></i>
-                    <h3>Paiement Sécurisé</h3>
-                    <p>Transactions 100% sécurisées</p>
-                </div>
-                <div class="avantage-item">
-                    <i class="fas fa-headset"></i>
-                    <h3>Service Client</h3>
-                    <p>Disponible 7j/7</p>
-                </div>
-            </div>
+        <div class="avantage-item">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Livraison Rapide</h3>
+            <p>Expédition sous 48h en France</p>
+        </div>
+        <div class="avantage-item">
+            <i class="fas fa-exchange-alt"></i>
+            <h3>Retours Faciles</h3>
+            <p>30 jours pour changer d'avis</p>
+        </div>
+        <div class="avantage-item">
+            <i class="fas fa-award"></i>
+            <h3>Qualité Premium</h3>
+            <p>Matériaux haut de gamme</p>
         </div>
     </section>
 
     <!-- Nouveautés -->
-    <section id="nouveautes" class="section">
+    <section class="section">
         <div class="container">
-            <h2>NOS NOUVEAUTÉS</h2>
-            <p class="section-subtitle">Découvrez les dernières créations de la collection</p>
+            <h2 class="section-title">NOS NOUVEAUTÉS</h2>
             <div class="products-grid" id="new-products">
-                <!-- Produits chargés dynamiquement -->
+                <!-- Produits chargés par JavaScript -->
             </div>
-            <div class="text-center">
-                <a href="pagesnouveautes.html" class="btn btn-outline">Voir toutes les nouveautés</a>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="pagesnouveautes.html" class="btn">Voir toutes les nouveautés</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Collections -->
-    <section id="collections" class="collections section bg-light">
-        <div class="container">
-            <h2>NOS COLLECTIONS</h2>
-            <p class="section-subtitle">Explorez nos univers dédiés</p>
-            <div class="collection-grid">
-                <a href="pagescollections.html?cat=homme" class="collection-item">
-                    <img src="imagescollection-homme.jpg" alt="Collection Homme">
-                    <div class="collection-overlay">
-                        <h3>COLLECTION HOMME</h3>
-                        <p>Voir la collection</p>
-                    </div>
-                </a>
-                <a href="pagescollections.html?cat=femme" class="collection-item">
-                    <img src="imagescollection-femme.jpg" alt="Collection Femme">
-                    <div class="collection-overlay">
-                        <h3>COLLECTION FEMME</h3>
-                        <p>Voir la collection</p>
-                    </div>
-                </a>
-                <a href="pagescollections.html?cat=accessoires" class="collection-item">
-                    <img src="imagescollection-accessoires.jpg" alt="Accessoires">
-                    <div class="collection-overlay">
-                        <h3>ACCESSOIRES</h3>
-                        <p>Complétez votre look</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <h3>NEWSLETTER</h3>
-            <p>Inscrivez-vous pour recevoir en avant-première nos nouveautés et offres exclusives</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Votre adresse email" required>
-                <button type="submit" class="btn">S'abonner</button>
-            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-column">
-                        <h4>MA MARQUE</h4>
-                        <p>Créateur de vêtements premium depuis 2024. Nous concevons des pièces uniques qui allient style, confort et qualité.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#"><i class="fab fa-tiktok"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer-column">
-                        <h4>CATÉGORIES</h4>
-                        <ul>
-                            <li><a href="pagesboutique.html?cat=homme">Homme</a></li>
-                            <li><a href="pagesboutique.html?cat=femme">Femme</a></li>
-                            <li><a href="pagesboutique.html?cat=accessoires">Accessoires</a></li>
-                            <li><a href="pagesnouveautes.html">Nouveautés</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>INFORMATIONS</h4>
-                        <ul>
-                            <li><a href="pagescontact.html">Contact</a></li>
-                            <li><a href="pagespaiement.html">Paiement & Livraison</a></li>
-                            <li><a href="#">Retours & Échanges</a></li>
-                            <li><a href="#">Mentions légales</a></li>
-                            <li><a href="#">CGV</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>CONTACT</h4>
-                        <p><i class="fas fa-phone"></i> +33 6 27 72 09 82</p>
-                        <p><i class="fas fa-envelope"></i> boutiqueenligne@ovoid.fr</p>
-                    </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OVOID</h4>
+                <p>Marque française de vêtements premium. Style, qualité et élégance.</p>
+                <div style="margin-top: 20px;">
+                    <a href="#"><i class="fab fa-instagram" style="color: #ccc; margin-right: 15px; font-size: 20px;"></i></a>
+                    <a href="#"><i class="fab fa-facebook" style="color: #ccc; margin-right: 15px; font-size: 20px;"></i></a>
+                    <a href="#"><i class="fab fa-tiktok" style="color: #ccc; font-size: 20px;"></i></a>
                 </div>
+            </div>
+            <div class="footer-section">
+                <h4>LIENS RAPIDES</h4>
+                <ul>
+                    <li><a href="pagesboutique.html">Boutique</a></li>
+                    <li><a href="pagesnouveautes.html">Nouveautés</a></li>
+                    <li><a href="pagesapropos.html">À propos</a></li>
+                    <li><a href="pagescontact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACT</h4>
+                <p>contact@ovoid.fr<br>+33 1 23 45 67 89</p>
+                <p>123 Avenue de la Mode<br>75001 Paris</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2024 Ma Marque. Tous droits réservés.</p>
-                <div class="payment-methods">
-                    <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-paypal"></i>
-                    <i class="fab fa-apple-pay"></i>
-                </div>
-            </div>
+            <p>&copy; 2024 Ovoid. Tous droits réservés.</p>
         </div>
     </footer>
 
