@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos | Ovoid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/about-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px 80px;
+            margin-top: 80px;
+        }
+        
+        .about-content {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+            line-height: 1.8;
+        }
+        
+        .about-section {
+            margin-bottom: 50px;
+        }
+        
+        .about-section h2 {
+            color: #000;
+            margin-bottom: 20px;
+            font-size: 32px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .value-card i {
+            font-size: 40px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        
+        .team-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            margin: 60px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #000;
+        }
+        
+        .contact-cta {
+            text-align: center;
+            padding: 60px 20px;
+            background: #000;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .mission-statement {
+            background: #f8f9fa;
+            padding: 40px;
+            border-left: 4px solid #000;
+            margin: 40px 0;
+            font-style: italic;
+            font-size: 18px;
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 100px 20px 60px;
+            }
+            
+            .about-content {
+                margin: 40px auto;
+            }
+            
+            .value-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">OVOID</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="pagesboutique.html">Boutique</a></li>
+                <li><a href="pagesnouveautes.html">Nouveautés</a></li>
+                <li><a href="pagescollections.html">Collections</a></li>
+                <li><a href="pagesapropos.html" class="active">À propos</a></li>
+                <li><a href="pagescontact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="pagespanier.html" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Bannière Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 style="font-size: 48px; margin-bottom: 20px;">NOTRE HISTOIRE</h1>
+            <p style="font-size: 20px; max-width: 600px; margin: 0 auto;">
+                Découvrez l'essence de la marque Ovoid
+            </p>
+        </div>
+    </section>
+
+    <!-- Contenu principal -->
+    <main class="about-content">
+        <!-- Section Notre Histoire -->
+        <section class="about-section">
+            <h2>QUI SOMMES-NOUS ?</h2>
+            <p>
+                <strong>Ovoid</strong> n'est pas seulement une marque de vêtements, c'est une vision. 
+                Fondée en 2024 à Paris, notre marque est née d'une conviction simple : 
+                la mode doit être à la fois esthétique, confortable et durable.
+            </p>
+            <p>
+                Le nom "Ovoid" symbolise notre philosophie de design : des formes organiques, 
+                fluides et harmonieuses qui épousent le corps sans le contraindre. 
+                Nous croyons que chaque pièce de vêtement doit devenir un essentiel de votre 
+                garde-robe, un compagnon du quotidien qui traverse les saisons et les tendances.
+            </p>
+            
+            <div class="mission-statement">
+                "Notre mission est de créer des vêtements qui allient élégance moderne, 
+                confort absolu et responsabilité environnementale."
+            </div>
+        </section>
+
+        <!-- Section Notre Mission -->
+        <section class="about-section">
+            <h2>NOTRE MISSION</h2>
+            <p>
+                Dans un monde dominé par la fast-fashion, nous avons choisi la voie inverse : 
+                <strong>produire moins, mais mieux</strong>. Chaque collection Ovoid est le fruit 
+                d'un long processus créatif, de la sélection minutieuse des matières premières 
+                au savoir-faire artisanal de nos ateliers partenaires.
+            </p>
+            <p>
+                Nous travaillons exclusivement avec des ateliers qui partagent nos valeurs 
+                éthiques et notre exigence qualité. Chaque vêtement est conçu pour durer, 
+                tant dans sa construction que dans son design intemporel.
+            </p>
+        </section>
+
+        <!-- Nos Valeurs -->
+        <section class="about-section">
+            <h2>NOS VALEURS</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>DURABILITÉ</h3>
+                    <p>
+                        Nous privilégions des matériaux écologiques et des processus 
+                        de production responsables pour minimiser notre impact environnemental.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>QUALITÉ PREMIUM</h3>
+                    <p>
+                        Des tissus haut de gamme, des finitions impeccables et une attention 
+                        aux détails qui font la différence au quotidien.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>TRANSPARENCE</h3>
+                    <p>
+                        Nous croyons en une relation honnête avec nos clients. Vous savez 
+                        exactement d'où viennent vos vêtements et comment ils sont fabriqués.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>ÉTHIQUE</h3>
+                    <p>
+                        Des conditions de travail dignes pour tous nos partenaires et 
+                        un engagement constant pour le commerce équitable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section L'Équipe -->
+        <section class="team-section">
+            <div class="container">
+                <h2 style="text-align: center; color: #000; font-size: 32px; margin-bottom: 20px;">
+                    L'ESPRIT OVOID
+                </h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: #666;">
+                    Derrière Ovoid se trouve une petite équipe passionnée de créatifs, 
+                    designers et artisans qui mettent tout en œuvre pour vous offrir 
+                    des pièces uniques qui racontent une histoire.
+                </p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="images/team1.jpg" alt="Fondateur Ovoid" class="team-img">
+                        <h3>Alexandre Martin</h3>
+                        <p style="color: #666; font-weight: 500;">Fondateur & Creative Director</p>
+                        <p style="color: #888; font-size: 14px; margin-top: 10px;">
+                            "Je crois que la mode doit être une expression de soi, pas une contrainte."
+                        </p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="images/team2.jpg" alt="Designer Ovoid" class="team-img">
+                        <h3>Sophie Laurent</h3>
+                        <p style="color: #666; font-weight: 500;">Lead Designer</p>
+                        <p style="color: #888; font-size: 14px; margin-top: 10px;">
+                            "Chaque détail compte. C'est ce qui transforme un vêtement en une pièce unique."
+                        </p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="images/team3.jpg" alt="Responsable Production" class="team-img">
+                        <h3>Thomas Dubois</h3>
+                        <p style="color: #666; font-weight: 500;">Responsable Production</p>
+                        <p style="color: #888; font-size: 14px; margin-top: 10px;">
+                            "Notre engagement qualité commence par le choix des matières premières."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Notre Engagement -->
+        <section class="about-section">
+            <h2>NOTRE ENGAGEMENT</h2>
+            <p>
+                Choisir Ovoid, c'est choisir une mode consciente et responsable. 
+                Nous nous engageons concrètement sur plusieurs fronts :
+            </p>
+            
+            <div style="margin-top: 30px;">
+                <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+                    <i class="fas fa-check" style="color: #000; margin-right: 15px; margin-top: 5px;"></i>
+                    <div>
+                        <strong>Réduction de notre empreinte carbone</strong>
+                        <p style="color: #666; margin-top: 5px;">
+                            Nous optimisons notre chaîne logistique et privilégions les 
+                            matériaux locaux autant que possible.
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+                    <i class="fas fa-check" style="color: #000; margin-right: 15px; margin-top: 5px;"></i>
+                    <div>
+                        <strong>Ateliers éthiques</strong>
+                        <p style="color: #666; margin-top: 5px;">
+                            Tous nos partenaires respectent les droits des travailleurs 
+                            et offrent des conditions de travail dignes.
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+                    <i class="fas fa-check" style="color: #000; margin-right: 15px; margin-top: 5px;"></i>
+                    <div>
+                        <strong>Emballages durables</strong>
+                        <p style="color: #666; margin-top: 5px;">
+                            Nos emballages sont 100% recyclables et nous limitons au maximum 
+                            l'utilisation de plastiques.
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: flex-start;">
+                    <i class="fas fa-check" style="color: #000; margin-right: 15px; margin-top: 5px;"></i>
+                    <div>
+                        <strong>Vêtements conçus pour durer</strong>
+                        <p style="color: #666; margin-top: 5px;">
+                            Chaque pièce est pensée pour résister au temps, tant dans sa 
+                            construction que dans son design intemporel.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chiffres clés -->
+        <section class="about-section">
+            <h2>EN CHIFFRES</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 30px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 40px; font-weight: bold; color: #000;">2024</div>
+                    <div style="color: #666;">Année de création</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 40px; font-weight: bold; color: #000;">100%</div>
+                    <div style="color: #666;">Fabriqué en France</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 40px; font-weight: bold; color: #000;">12</div>
+                    <div style="color: #666;">Nouveautés par mois</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 40px; font-weight: bold; color: #000;">30j</div>
+                    <div style="color: #666;">Garantie satisfait ou remboursé</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Call to Action -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2 style="font-size: 32px; margin-bottom: 20px;">PRÊT À REJOINDRE L'AVENTURE OVOID ?</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; font-size: 18px;">
+                Découvrez notre première collection et faites l'expérience 
+                d'une mode différente, plus authentique, plus vous.
+            </p>
+            <a href="pagesboutique.html" class="btn" style="background: white; color: #000; border: none; padding: 15px 40px;">
+                Découvrir la Collection
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OVOID</h4>
+                <p>Marque française de vêtements premium. Style, qualité et élégance.</p>
+                <div style="margin-top: 20px;">
+                    <a href="#" style="color: #ccc; margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: #ccc; margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: #ccc; font-size: 20px;"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>LIENS RAPIDES</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="pagesboutique.html">Boutique</a></li>
+                    <li><a href="pagesnouveautes.html">Nouveautés</a></li>
+                    <li><a href="pagescollections.html">Collections</a></li>
+                    <li><a href="pagesapropos.html">À propos</a></li>
+                    <li><a href="pagescontact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACT</h4>
+                <p>contact@ovoid.fr<br>+33 1 23 45 67 89</p>
+                <p>123 Avenue de la Mode<br>75001 Paris, France</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ovoid. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
