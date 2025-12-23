@@ -3,11 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - OVOID</title>
+    <title>FAQ - Questions Fréquentes | OVOID</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 50px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: #aaa;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        
+        .back-link:hover {
+            color: white;
+        }
+        
+        h1 {
+            font-size: 42px;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin: 50px 0 30px;
+            color: white;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        
+        .faq-category {
+            margin-bottom: 60px;
+        }
+        
+        .faq-item {
+            background-color: #111;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #222;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .faq-question:hover {
+            background-color: #1a1a1a;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            color: #ccc;
+            background-color: #151515;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .search-bar {
+            margin-bottom: 40px;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 15px;
+            background-color: #111;
+            border: 1px solid #333;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .search-bar input::placeholder {
+            color: #666;
+        }
+        
+        .contact-faq {
+            background-color: #111;
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 60px;
+            text-align: center;
+            border-left: 4px solid white;
+        }
+        
+        .contact-faq h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: black;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background: #ddd;
+        }
+        
+        footer {
+            background-color: #111;
+            padding: 60px 20px 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-section h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section ul li a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #fff;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Questions Fréquentes</h1>
-    <p>Page des questions fréquemment posées.</p>
-    <a href="index.html">Retour à l'accueil</a>
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo">OVOID</a>
+            <a href="index.html" class="back-link">← Retour à l'accueil</a>
+        </header>
+        
+        <main>
+            <h1>Questions Fréquentes (FAQ)</h1>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher dans la FAQ...">
+            </div>
+            
+            <div class="faq-category">
+                <h2>📦 Commandes & Livraison</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Comment suivre ma commande ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Une fois votre commande expédiée, vous recevrez un email de confirmation avec un numéro de suivi. Vous pouvez suivre votre colis directement sur le site du transporteur avec ce numéro.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quels sont les délais de livraison ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>France métropolitaine : 2-4 jours ouvrables<br>
+                        Europe : 5-7 jours ouvrables<br>
+                        International : 7-14 jours ouvrables<br>
+                        Les délais commencent à compter de l'expédition.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Puis-je modifier mon adresse de livraison ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Vous pouvez modifier votre adresse de livraison tant que votre commande n'a pas été expédiée. Contactez notre service client au +33 1 23 45 67 89 ou par email à support@ovoid.fr.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-category">
+                <h2>🔄 Retours & Échanges</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quelle est votre politique de retour ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Vous disposez de 30 jours à compter de la réception pour retourner tout article non porté, avec étiquette intacte. Les retours sont gratuits en France métropolitaine.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Comment effectuer un retour ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>1. Connectez-vous à votre compte<br>
+                        2. Allez dans "Mes commandes"<br>
+                        3. Sélectionnez la commande concernée<br>
+                        4. Cliquez sur "Retourner un article"<br>
+                        5. Imprimez l'étiquette de retour fournie</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Combien de temps pour le remboursement ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Une fois le colis reçu et inspecté dans nos entrepôts, le remboursement est traité sous 5-7 jours ouvrables. Le délai d'apparition sur votre compte dépend de votre banque.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-category">
+                <h2>👕 Produits & Tailles</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Comment choisir ma taille ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Consultez notre guide des tailles disponible sur chaque fiche produit. Nous recommandons de prendre vos mensurations et de les comparer avec notre tableau. En cas de doute entre deux tailles, prenez la taille supérieure.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Les couleurs des produits sont-elles fidèles aux photos ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous faisons de notre mieux pour représenter fidèlement nos produits. Cependant, les écrans peuvent afficher les couleurs différemment. En cas de différence notable, vous pouvez retourner l'article gratuitement.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Comment entretenir mes vêtements OVOID ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Consultez l'étiquette d'entretien à l'intérieur de chaque vêtement. En général : lavage à 30°C, pas de sèche-linge, repassage à basse température. Pour le denim, lavez à l'envers et évitez de laver trop fréquemment.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-category">
+                <h2>💳 Paiement & Compte</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quels modes de paiement acceptez-vous ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous acceptons : Cartes bancaires (Visa, MasterCard, American Express), PayPal, Apple Pay, Google Pay, virement bancaire et paiement en 3 ou 4 fois sans frais avec Alma.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Mes données de paiement sont-elles sécurisées ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, nous utilisons le cryptage SSL 256-bit et nous ne stockons jamais vos informations de carte bancaire. Les paiements sont traités par des plateformes certifiées PCI-DSS.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Comment créer un compte ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cliquez sur "Mon compte" en haut à droite, puis "Créer un compte". Vous pouvez aussi créer un compte automatiquement lors de votre première commande.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-faq">
+                <h3>Vous n'avez pas trouvé la réponse à votre question ?</h3>
+                <p>Notre équipe de support est disponible pour vous aider.</p>
+                <a href="support.html" class="btn">Contactez le support</a>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>NAVIGATION</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="pagesboutique.html">Boutique</a></li>
+                    <li><a href="pagesnouveautes.html">Nouveautés</a></li>
+                    <li><a href="pagescollections.html">Collections</a></li>
+                    <li><a href="pagesapropos.html">À propos</a></li>
+                    <li><a href="pagescontact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>CATÉGORIES</h4>
+                <ul>
+                    <li><a href="#">DENIM & PANTALONS</a></li>
+                    <li><a href="#">VESTES</a></li>
+                    <li><a href="#">T-SHIRTS</a></li>
+                    <li><a href="#">ZIPS & SWEATS À CAPUCHE</a></li>
+                    <li><a href="#">KNITS & CREWNECKS</a></li>
+                    <li><a href="#">ACCESSOIRES</a></li>
+                    <li><a href="#">JORTS & SHORTS</a></li>
+                    <li><a href="#">HAUTS & CHEMISES</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><a href="support.html">SUPPORT</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="cov.html">COV</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>INFORMATIONS LÉGALES</h4>
+                <ul>
+                    <li><a href="#">MARQUE JURIDIQUE</a></li>
+                    <li><a href="#">CGU</a></li>
+                    <li><a href="#">MENTIONS LÉGALES</a></li>
+                    <li><a href="#">POLITIQUE DE CONFIDENTIALITÉ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>NEWSLETTER</h4>
+                <p>Inscrivez-vous pour recevoir nos<br>nouveautés et offres exclusives.</p>
+                <form>
+                    <input type="email" placeholder="Votre email">
+                    <button type="submit" class="btn">S'inscrire</button>
+                </form>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 OVOID. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ accordéon
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Recherche FAQ
+        const searchInput = document.querySelector('.search-bar input');
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span:first-child').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
